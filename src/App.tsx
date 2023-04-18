@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './components/navbar';
+import { ClaimDomainSection } from './components/claimBTCSection';
+import { RegisterationSection } from './components/registerationStepsSection';
+import { LightningSection } from './components/lightningSection';
+import { GoldSection } from './components/goldSection';
+import { JoinMovementSection } from './components/joinMovementSection';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div id="app" className="bg-main bg-cover bg-center h-full w-full">
+            <NavBar />
+            <ClaimDomainSection />
+            <RegisterationSection />
+            <LightningSection />
+            <GoldSection />
+            <JoinMovementSection />
+        </div>
+    );
 }
 
 export default App;
