@@ -2,6 +2,8 @@ import { SearchDisclaimer } from './searchDisclaimer';
 import { SearchBar } from './searchBar';
 import { Availability } from './availability';
 import SvgGlassPurple from '../../../images/PurpleSearchIcon';
+import SvgCross from '../../../images/SVGCross';
+import SvgTick from '../../../images/SVGTick';
 
 interface IDiscalimerAvailibility {
     discalimerAndAvailabilityHidden: boolean;
@@ -25,7 +27,7 @@ export const Search = () => {
         discalimerAndAvailabilityHidden: false,
         availabilityText: 'Unavailable',
         availabilityTextColorString: 'text-black',
-        searchBarIcon: <SvgGlassPurple />,
+        searchBarIcon: <SvgCross />,
         claimBtnDisabled: true
     };
 
@@ -33,7 +35,7 @@ export const Search = () => {
         discalimerAndAvailabilityHidden: false,
         availabilityText: 'Available for many stx/year',
         availabilityTextColorString: 'text-green-700',
-        searchBarIcon: <SvgGlassPurple />,
+        searchBarIcon: <SvgTick />,
         claimBtnDisabled: false
     };
 
