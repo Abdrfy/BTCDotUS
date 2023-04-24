@@ -4,6 +4,7 @@ import { RegisterationSection } from './components/registerationStepsSection';
 import { LightningSection } from './components/lightningSection';
 import { GoldSection } from './components/goldSection';
 import { JoinMovementSection } from './components/joinMovementSection';
+import { FAQSection } from './components/faq';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <LightningSection />
             <GoldSection />
             <JoinMovementSection />
+            <FAQSection />
         </div>
     );
 }
