@@ -7,7 +7,6 @@ interface IBtnInfoList {
 }
 
 const Redirector = ({ infoList }: IBtnInfoList) => {
-    let firstBtnInfo = infoList[0];
     return (
         <div className="flex flex-row space-x-10 items-center">
             {infoList.map((bntInfo) => (

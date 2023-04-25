@@ -4,11 +4,12 @@ import SignIn from './signin';
 import { IRedirectorButtonProps } from '../../interfaces/IRedirectorButtonProps';
 import { ElementIds } from '../../Enums/ElementIds';
 import SvgBitcoinStacks from '../../images/BitcointStacks';
+import SvgLightningSymbol from '../../images/SVGLightningSymbol';
 
 const NavBar = () => {
     const redirectorBtnInfoList: Array<IRedirectorButtonProps> = [
         {
-            img: SvgBitcoinStacks,
+            img: SvgLightningSymbol,
             label: 'Lightning Address',
             redirectToElementWithId: ElementIds.lightning
         },
