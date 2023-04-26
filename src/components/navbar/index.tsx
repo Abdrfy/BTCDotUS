@@ -1,32 +1,14 @@
 import Home from './home';
-import Redirector from './redirector';
+import Redirector from './redirectors/redirector';
 import SignIn from './signin';
-import { IRedirectorButtonProps } from '../../interfaces/IRedirectorButtonProps';
-import { ElementIds } from '../../Enums/ElementIds';
-import SvgBitcoinStacks from '../../images/BitcointStacks';
-import SvgLightningSymbol from '../../images/SVGLightningSymbol';
+import { Redirectors } from './redirectors';
 
 const NavBar = () => {
-    const redirectorBtnInfoList: Array<IRedirectorButtonProps> = [
-        {
-            img: SvgLightningSymbol,
-            label: 'Lightning Address',
-            redirectToElementWithId: ElementIds.lightning
-        },
-        {
-            label: 'FAQ',
-            redirectToElementWithId: ElementIds.faq
-        },
-        {
-            label: 'Support',
-            redirectToElementWithId: ElementIds.about
-        }
-    ];
     return (
         <>
             <nav className="fixed h-20 min-w-full bg-black flex flex-row justify-between items-center z-10">
                 <Home />
-                <Redirector infoList={redirectorBtnInfoList} />
+                <Redirectors />
                 <SignIn />
             </nav>
         </>

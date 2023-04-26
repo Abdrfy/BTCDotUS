@@ -1,10 +1,10 @@
 import SvgDomainManage from '../../../images/SVGDomainManage';
 import SvgDomainRegister from '../../../images/SVGDomainRegister';
 import SvgDomainSearch from '../../../images/SVGDomainSearch';
-import { IRegisterationStep, RegisterationStep } from './step';
+import { IVerticalImageTitleDesc, VerticalImageTitleComp } from './step';
 
 export const RegisterationSteps = () => {
-    const registerationSteps: IRegisterationStep[] = [
+    const registerationSteps: IVerticalImageTitleDesc[] = [
         {
             icon: <SvgDomainSearch />,
             title: 'Search',
@@ -25,7 +25,7 @@ export const RegisterationSteps = () => {
     return (
         <div className="mt-12 flex-row inline-flex justify-center space-x-10">
             {registerationSteps.map((aRegisterationValue) => (
-                <RegisterationStep icon={aRegisterationValue.icon} title={aRegisterationValue.title} description={aRegisterationValue.description} />
+                <VerticalImageTitleComp icon={aRegisterationValue.icon} title={aRegisterationValue.title} description={aRegisterationValue.description} />
             ))}
             ;
         </div>

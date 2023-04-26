@@ -4,7 +4,9 @@ import { RegisterationSection } from './components/registerationStepsSection';
 import { LightningSection } from './components/lightningSection';
 import { GoldSection } from './components/goldSection';
 import { JoinMovementSection } from './components/joinMovementSection';
-import { FAQSection } from './components/faq';
+import { FAQSection } from './components/faqSection';
+import { SocialSection } from './components/socialSection';
+import { Footer } from './components/footerSection';
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
             <GoldSection />
             <JoinMovementSection />
             <FAQSection />
+            <SocialSection />
+            <Footer />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import RedirectorButton from './redirectors/redirectorbutton';
-import { IRedirectorButtonProps } from '../../interfaces/IRedirectorButtonProps';
+import RedirectorButton from './redirectorbutton';
+import { IRedirectorButtonProps } from '../../../interfaces/IRedirectorButtonProps';
 
 interface IBtnInfoList {
     infoList: IRedirectorButtonProps[];
@@ -8,7 +8,7 @@ interface IBtnInfoList {
 
 const Redirector = ({ infoList }: IBtnInfoList) => {
     return (
-        <div className="flex flex-row space-x-10 items-center">
+        <div className="flex flex-row justify-between w-[20%] space-x-4">
             {infoList.map((bntInfo) => (
                 <RedirectorButton btnInfo={bntInfo} />
             ))}

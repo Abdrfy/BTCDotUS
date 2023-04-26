@@ -1,6 +1,6 @@
-import { IFAQQUestionAnswerList } from '../../components/faq';
-import { IFAQQUestionAnswer } from '../../components/faq/questionAnswer';
-import { IAnswer, IAnswerInfoList } from '../../components/faq/questionAnswer/faqAnswer';
+import { IFAQQUestionAnswerList } from '../../components/faqSection';
+import { IFAQQUestionAnswer } from '../../components/faqSection/questionAnswer';
+import { IAnswer, IAnswerInfoList } from '../../components/faqSection/questionAnswer/faqAnswer';
 
 const lightningAnswer1: IAnswer[] = [
     {

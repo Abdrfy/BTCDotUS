@@ -1,6 +1,6 @@
 import * as React from 'react';
-const SvgBitcoinStacks = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="none" viewBox="0 0 147 66">
+const SvgBitcoinStacks = (props: { size: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={props.size} height={props.size} fill="none" viewBox="0 0 147 66">
         <path fill="#fff" d="M113.731.65c17.985 0 32.564 14.58 32.564 32.564s-14.579 32.563-32.564 32.563c-17.984 0-32.563-14.579-32.563-32.563S95.748.651 113.731.651Z" />
         <path
             fill="#121212"
