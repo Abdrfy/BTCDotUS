@@ -1,25 +1,9 @@
-import { showConnect } from '@stacks/connect';
-import { userSession } from '../../stacks/userSession';
+import { ShowConnect } from '../../stacks/showConnect';
 
 export const SignIn = () => {
-    const myAppName = 'My Btc.us';
-    const myAppIcon = '../../logo.svg';
-
     const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        showConnect({
-            userSession,
-            appDetails: {
-                name: myAppName,
-                icon: myAppIcon
-            },
-            onFinish: () => {
-                window.location.reload();
-            },
-            onCancel: () => {
-                console.log('cancelled');
-            }
-        });
+        ShowConnect();
     };
 
     return (
