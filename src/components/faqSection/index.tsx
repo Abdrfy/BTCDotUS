@@ -31,7 +31,7 @@ function modifyIsClosedStates(iQAndAlist: IFAQQUestionAnswerList, openedQuestion
 }
 
 const FAQ = () => {
-    const { state, dispatch } = useFAQContext();
+    const { state } = useFAQContext();
     let qAndAlist!: IFAQQUestionAnswerList;
     const selectedFAQOption = state.selectedFAQOption;
     switch (selectedFAQOption) {
@@ -52,10 +52,6 @@ const FAQ = () => {
             break;
     }
     modifyIsClosedStates(qAndAlist, state.openedQuestionsIndexList);
-    /// Modify the isClosed values in questions of qAndAlist based on state.openedQuestionsIndexList
-    /// Add dispatch call in faqOptionButton to send the index of the button - DONE
-    /// Add dispatch call in faqOptionButton to clear openedQuestionsIndexList array - probably not needed
-
     return (
         <div id={ElementIds.faq} className="mt-52">
             <h1 className="text-6xl font-bold text-center">Frequently Asked Questions</h1>

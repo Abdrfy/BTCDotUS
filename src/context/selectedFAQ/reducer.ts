@@ -3,13 +3,10 @@ import { ActionType, FAQActions, IFAQOptionSelected, IQuestionSelected } from '.
 import { FAQState } from './state';
 
 export function reducer(state: FAQState, action: FAQActions): FAQState {
-    console.log('reducer action ', action);
     switch (action.type) {
         case ActionType.FAQOption:
-            console.log('FAQOption');
             return { selectedFAQOption: action.payload, openedQuestionsIndexList: [] };
         case ActionType.QuestionSelect:
-            console.log('QuestionSelect');
             const openedQuestionIndexList = state.openedQuestionsIndexList;
             const currentSelectedQuestionIndex = action.payload;
 
@@ -20,7 +17,6 @@ export function reducer(state: FAQState, action: FAQActions): FAQState {
             } else {
                 openedQuestionIndexList.push(currentSelectedQuestionIndex);
             }
-            console.log('openedQuestionIndexList ', openedQuestionIndexList);
             return { ...state, openedQuestionsIndexList: openedQuestionIndexList };
     }
 }

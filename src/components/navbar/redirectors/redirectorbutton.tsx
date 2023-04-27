@@ -10,7 +10,7 @@ const RedirectorButton = ({ btnInfo }: IBtnInfo) => {
     const { img: Img } = btnInfo;
     const padding = Img ? 'pl-1' : 'pl-0';
     return (
-        <>
+        <div>
             <button
                 type="button"
                 className=" hover:opacity-50 text-base inline-flex items-center bg-black dark:text-white min-w-max"
@@ -19,7 +19,7 @@ const RedirectorButton = ({ btnInfo }: IBtnInfo) => {
                 {Img ? <Img size="1.2em" /> : null}
                 <span className={padding}> {btnInfo.label} </span>
             </button>
-        </>
+        </div>
     );
 };
 

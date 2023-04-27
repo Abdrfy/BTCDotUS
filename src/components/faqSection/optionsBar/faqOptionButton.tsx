@@ -1,6 +1,6 @@
 import { FAQOptions } from '../../../Enums/FAQOptions';
 import { useFAQContext } from '../../../context';
-import { faqpOptionSelected, reducer } from '../../../context/selectedFAQ/reducer';
+import { faqpOptionSelected } from '../../../context/selectedFAQ/reducer';
 
 interface IFAQOption {
     title: string;
@@ -10,7 +10,7 @@ export const FAQOptionButton = (props: IFAQOption) => {
     const { state, dispatch } = useFAQContext();
 
     const selectedFAQOption = state.selectedFAQOption;
-    const isSelected = selectedFAQOption == props.title;
+    const isSelected = selectedFAQOption === props.title;
     const bgColor = isSelected ? 'bg-indigo-600' : 'bg-white';
     const textColor = isSelected ? 'text-white' : 'text-indigo-600';
     const bgHoverColor = isSelected ? '' : 'hover:bg-indigo-600';
@@ -24,11 +24,8 @@ export const FAQOptionButton = (props: IFAQOption) => {
         event.preventDefault();
 
         const button: HTMLButtonElement = event.currentTarget;
-        console.log('selectedFAQOption ', selectedFAQOption);
-        console.log('button.id ', button.id);
-        if (button.id != selectedFAQOption) {
+        if (button.id !== selectedFAQOption) {
             const faqEnum: FAQOptions | undefined = reverse.get(button.id);
-            console.log('faqEnum ', faqEnum);
             if (faqEnum) {
                 dispatch(faqpOptionSelected(faqEnum));
             }

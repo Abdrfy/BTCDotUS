@@ -18,7 +18,6 @@ export const FAQQuestion = (props: IQuestion) => {
     const classNameStr = color + ' ' + hover;
 
     const buttonHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-        console.log('question button handler');
         event.preventDefault();
 
         const div: HTMLDivElement = event.currentTarget;

@@ -25,7 +25,7 @@ export const RegisterationSteps = () => {
     return (
         <div className="mt-12 flex-row inline-flex justify-center space-x-10">
             {registerationSteps.map((aRegisterationValue) => (
-                <VerticalImageTitleComp icon={aRegisterationValue.icon} title={aRegisterationValue.title} description={aRegisterationValue.description} />
+                <VerticalImageTitleComp key={aRegisterationValue.title} icon={aRegisterationValue.icon} title={aRegisterationValue.title} description={aRegisterationValue.description} />
             ))}
             ;
         </div>

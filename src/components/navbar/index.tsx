@@ -1,6 +1,5 @@
 import Home from './home';
-import Redirector from './redirectors/redirector';
-import SignIn from './signin';
+import { SignIn } from './signin';
 import { Redirectors } from './redirectors';
 
 const NavBar = () => {

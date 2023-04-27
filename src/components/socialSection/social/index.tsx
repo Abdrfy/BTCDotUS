@@ -22,7 +22,7 @@ export const SocialOptions = () => {
     return (
         <div className="mt-12 flex-row inline-flex space-x-24 cursor-pointer">
             {socialOptions.map((aSocialInfo) => (
-                <VerticalImageTitleComp icon={aSocialInfo.icon} title={aSocialInfo.title} />
+                <VerticalImageTitleComp key={aSocialInfo.title} icon={aSocialInfo.icon} title={aSocialInfo.title} />
             ))}
         </div>
     );

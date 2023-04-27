@@ -3,7 +3,6 @@ import SvgScrollLeftIcon from '../../../images/SVGScrollLeftIcon';
 import { FAQOptionButton } from './faqOptionButton';
 
 export const OptionsBar = () => {
-    const selectedOption = FAQOptions.general;
     const faq_options_container_id = 'faq_options_container';
 
     const scrollLeft = () => {
@@ -32,7 +31,7 @@ export const OptionsBar = () => {
                 </div>
                 <div id={faq_options_container_id} className="overflow-x-auto w-[60%] mx-2 py-4 scroll-smooth bg-black whitespace-nowrap">
                     {Object.values(FAQOptions).map((faqOption) => (
-                        <FAQOptionButton title={faqOption} />
+                        <FAQOptionButton key={faqOption} title={faqOption} />
                     ))}
                 </div>
                 <div className="hover:scale-125 rotate-180 cursor-pointer" onClick={scrollRight}>

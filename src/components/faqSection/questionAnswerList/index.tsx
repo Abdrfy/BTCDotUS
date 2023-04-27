@@ -7,7 +7,7 @@ export const FAQQuestionAnswerList = (props: IFAQQUestionAnswerList) => {
     return (
         <div className="mt-10 flex flex-col space-y-3 items-center pb-8">
             {qAndAList.questionAnswerList.map((qAndA) => (
-                <FaqQuestionAnswer questionInfo={qAndA.questionInfo} answerInfo={qAndA.answerInfo} />
+                <FaqQuestionAnswer key={qAndA.questionInfo.id} questionInfo={qAndA.questionInfo} answerInfo={qAndA.answerInfo} />
             ))}
         </div>
     );
