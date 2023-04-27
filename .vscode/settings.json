@@ -1,0 +1,16 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.wordWrap": "on",
+    "tailwindCSS.includeLanguages": {
+        "typescriptreact": "html"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+}
