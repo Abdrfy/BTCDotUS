@@ -1,23 +1,23 @@
 import { useEffect, useState } from 'react';
 import { useClaimDomainContext } from '../../../context/claimDomain/context';
 import { Spinner } from '../../../spinner/spinner';
+import { DomainAvailabilityAPI } from '../../../api';
 
 interface ISearchBar {
     searchIcon: React.ReactNode;
     claimBtnDisabled: boolean;
-    shouldDisplaySpinner: boolean;
+    isAPIRequestInProgress: boolean;
 }
 
 export const SearchBar = (props: ISearchBar) => {
     const { setInputValue } = useClaimDomainContext();
-    const [localShouldShowSpinner, setLocalShouldShowSpinner] = useState(false);
+    const [isUserTyping, setIsUserTyping] = useState(false);
     const [localInputValue, setlocalInputValue] = useState('');
-
     useEffect(() => {
         const timer = setTimeout(() => {
             if (localInputValue.length > 0) {
                 // REMOVE THIS AFTER ADDING REDUCER
-                setLocalShouldShowSpinner(true);
+                setIsUserTyping(false);
                 setInputValue(localInputValue);
             }
         }, 800);
@@ -26,11 +26,12 @@ export const SearchBar = (props: ISearchBar) => {
     }, [localInputValue]);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLocalShouldShowSpinner(false);
+        setIsUserTyping(true);
         setlocalInputValue(e.target.value);
+        DomainAvailabilityAPI.shared.cancelRequest();
     };
 
-    let shouldDisplaySpinner = props.shouldDisplaySpinner && localShouldShowSpinner;
+    let shouldDisplaySpinner = props.isAPIRequestInProgress && !isUserTyping;
 
     return (
         <div className="mt-2 inline-flex w-screen justify-center min-w-max">

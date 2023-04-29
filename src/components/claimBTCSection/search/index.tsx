@@ -6,7 +6,7 @@ import SvgCross from '../../../images/SVGCross';
 import SvgTick from '../../../images/SVGTick';
 import { useClaimDomainContext } from '../../../context/claimDomain/context';
 import { useEffect, useState } from 'react';
-import { API } from '../../../api';
+import { DomainAvailabilityAPI } from '../../../api';
 
 interface IDiscalimerAvailibility {
     discalimerAndAvailabilityHidden: boolean;
@@ -17,7 +17,7 @@ interface IDiscalimerAvailibility {
 }
 
 export const Search = () => {
-    const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
+    const [isAPIRequestInProgress, setIsAPIRequestInProgress] = useState(false);
     // THese are only here as placeholders for values that will come from API and some values will be calculated based of that
     const notSearchedStateValues: IDiscalimerAvailibility = {
         discalimerAndAvailabilityHidden: true,
@@ -45,13 +45,14 @@ export const Search = () => {
 
     let myStateValues = notSearchedStateValues;
 
-    const api = new API();
     const { inputValue } = useClaimDomainContext();
     const checkDomainAvailability = async () => {
-        setShouldShowSpinner(true);
-        const response = await api.checkDomainAvailaility(inputValue);
-        setShouldShowSpinner(false);
-        console.log('Clain Domain API Response ', response);
+        setIsAPIRequestInProgress(true);
+        const response = await DomainAvailabilityAPI.shared.checkDomainAvailaility(inputValue);
+        setIsAPIRequestInProgress(false);
+        if (response) {
+            console.log('Clain Domain API Response ', response);
+        }
     };
 
     useEffect(() => {
@@ -65,7 +66,7 @@ export const Search = () => {
     return (
         <div className="mt-14 mb-10 text-center w-screen">
             <SearchDisclaimer isHidden={myStateValues.discalimerAndAvailabilityHidden} />
-            <SearchBar searchIcon={myStateValues.searchBarIcon} claimBtnDisabled={myStateValues.claimBtnDisabled} shouldDisplaySpinner={shouldShowSpinner} />
+            <SearchBar searchIcon={myStateValues.searchBarIcon} claimBtnDisabled={myStateValues.claimBtnDisabled} isAPIRequestInProgress={isAPIRequestInProgress} />
             <Availability text={myStateValues.availabilityText} textColorString={myStateValues.availabilityTextColorString} isHidden={myStateValues.discalimerAndAvailabilityHidden} />
         </div>
     );
