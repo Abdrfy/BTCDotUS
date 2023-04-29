@@ -10,7 +10,7 @@ export interface IQuestion {
 }
 
 export const FAQQuestion = (props: IQuestion) => {
-    const { state, dispatch } = useFAQContext();
+    const { dispatch } = useFAQContext();
 
     const isClosed = props.isClosed;
     const color = isClosed ? 'text-white' : 'text-indigo-600';

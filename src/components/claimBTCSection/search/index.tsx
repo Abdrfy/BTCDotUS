@@ -4,6 +4,9 @@ import { Availability } from './availability';
 import SvgGlassPurple from '../../../images/PurpleSearchIcon';
 import SvgCross from '../../../images/SVGCross';
 import SvgTick from '../../../images/SVGTick';
+import { useClaimDomainContext } from '../../../context/claimDomain/context';
+import { useEffect, useState } from 'react';
+import { API } from '../../../api';
 
 interface IDiscalimerAvailibility {
     discalimerAndAvailabilityHidden: boolean;
@@ -14,6 +17,7 @@ interface IDiscalimerAvailibility {
 }
 
 export const Search = () => {
+    const [shouldShowSpinner, setShouldShowSpinner] = useState(false);
     // THese are only here as placeholders for values that will come from API and some values will be calculated based of that
     const notSearchedStateValues: IDiscalimerAvailibility = {
         discalimerAndAvailabilityHidden: true,
@@ -39,12 +43,29 @@ export const Search = () => {
         claimBtnDisabled: false
     };
 
-    const myStateValues = notSearchedStateValues;
+    let myStateValues = notSearchedStateValues;
+
+    const api = new API();
+    const { inputValue } = useClaimDomainContext();
+    const checkDomainAvailability = async () => {
+        setShouldShowSpinner(true);
+        const response = await api.checkDomainAvailaility(inputValue);
+        setShouldShowSpinner(false);
+        console.log('Clain Domain API Response ', response);
+    };
+
+    useEffect(() => {
+        if (inputValue.length > 0) {
+            checkDomainAvailability();
+        } else {
+            myStateValues = notSearchedStateValues;
+        }
+    }, [inputValue]);
 
     return (
         <div className="mt-14 mb-10 text-center w-screen">
             <SearchDisclaimer isHidden={myStateValues.discalimerAndAvailabilityHidden} />
-            <SearchBar searchIcon={myStateValues.searchBarIcon} claimBtnDisabled={myStateValues.claimBtnDisabled} />
+            <SearchBar searchIcon={myStateValues.searchBarIcon} claimBtnDisabled={myStateValues.claimBtnDisabled} shouldDisplaySpinner={shouldShowSpinner} />
             <Availability text={myStateValues.availabilityText} textColorString={myStateValues.availabilityTextColorString} isHidden={myStateValues.discalimerAndAvailabilityHidden} />
         </div>
     );
