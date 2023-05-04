@@ -20,7 +20,7 @@ export const SocialOptions = () => {
     ];
 
     return (
-        <div className="mt-12 flex-row inline-flex space-x-24 cursor-pointer">
+        <div className="mt-12 flex flex-col tablet:flex-row max-[640px]:space-y-5 tablet:space-x-24 cursor-pointer">
             {socialOptions.map((aSocialInfo) => (
                 <VerticalImageTitleComp key={aSocialInfo.title} icon={aSocialInfo.icon} title={aSocialInfo.title} />
             ))}

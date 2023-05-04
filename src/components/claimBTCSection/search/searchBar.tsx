@@ -34,12 +34,15 @@ export const SearchBar = (props: ISearchBar) => {
     let shouldDisplaySpinner = props.isAPIRequestInProgress && !isUserTyping;
 
     return (
-        <div className="mt-2 inline-flex w-screen justify-center min-w-max">
-            <form className="flex flex-row items-center text-m h-24  box-border bg-white rounded-full py-2 pl-8 w-[50%]">
+        <div className="mt-2 flex flex-col w-screen justify-center items-center">
+            <form className="flex flex-row items-center text-m h-20 tabletPlus:h-24 box-border bg-white rounded-full py-2 pl-4 tablet:pl-8 w-[50%] min-w-[90%] tablet:min-w-[50%]">
                 {shouldDisplaySpinner ? <Spinner /> : props.searchIcon}
-                <input className="text-m grow-[0.95] ml-3 w-0 text-black outline-none " placeholder="Search for your new .BTC domain" onChange={onChange} />
-                <button className={' w-[20%] h-[90%] rounded-full color bg-purple-400 text-white font-bold' + (props.claimBtnDisabled ? ' opacity-50' : ' opacity-100')}>Claim</button>
+                <input className="tabletPlus:text-m text-sm  grow-[0.95] ml-2 tablet:ml-3 w-0 text-black outline-none" placeholder="Search for your new .BTC domain" onChange={onChange} />
+                <button className={'hidden tablet:block h-[90%] w-[20%]  rounded-full color bg-purple-400 text-white font-bold shrink-0' + (props.claimBtnDisabled ? ' opacity-50' : ' opacity-100')}>
+                    Claim
+                </button>
             </form>
+            <button className={'block tablet:hidden mt-4 w-32 h-14 rounded-full color bg-purple-400 text-white font-bold' + (props.claimBtnDisabled ? ' opacity-50' : ' opacity-100')}>Claim</button>
         </div>
     );
 };

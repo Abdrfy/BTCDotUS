@@ -6,7 +6,7 @@ import { ClaimDomainContext } from '../../context/claimDomain/context';
 
 export const ClaimDomainSection = () => {
     return (
-        <section id={ElementIds.claimBTCDomain}>
+        <section id={ElementIds.claimBTCDomain} className="flex flex-col">
             <Title />
             <ClaimDomainContext>
                 <Search />

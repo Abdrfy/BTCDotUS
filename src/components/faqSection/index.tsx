@@ -53,7 +53,7 @@ const FAQ = () => {
     }
     modifyIsClosedStates(qAndAlist, state.openedQuestionsIndexList);
     return (
-        <div id={ElementIds.faq} className="mt-52">
+        <div id={ElementIds.faq} className="mt-32">
             <h1 className="text-6xl font-bold text-center">Frequently Asked Questions</h1>
             <OptionsBar />
             <FAQQuestionAnswerList questionAnswerList={qAndAlist.questionAnswerList} />

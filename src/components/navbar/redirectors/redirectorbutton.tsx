@@ -13,7 +13,7 @@ const RedirectorButton = ({ btnInfo }: IBtnInfo) => {
         <div>
             <button
                 type="button"
-                className=" hover:opacity-50 text-base inline-flex items-center bg-black dark:text-white min-w-max"
+                className=" hover:opacity-50 lg:text-base text-sm inline-flex items-center bg-black dark:text-white min-w-max h-full"
                 onClick={() => scrollToElementWithId(btnInfo.redirectToElementWithId)}
             >
                 {Img ? <Img size="1.2em" /> : null}

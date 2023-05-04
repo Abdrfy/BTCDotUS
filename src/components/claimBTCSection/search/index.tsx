@@ -64,7 +64,7 @@ export const Search = () => {
     }, [inputValue]);
 
     return (
-        <div className="mt-14 mb-10 text-center w-screen">
+        <div className="mt-14 mb-10 text-center w-screen flex flex-col">
             <SearchDisclaimer isHidden={myStateValues.discalimerAndAvailabilityHidden} />
             <SearchBar searchIcon={myStateValues.searchBarIcon} claimBtnDisabled={myStateValues.claimBtnDisabled} isAPIRequestInProgress={isAPIRequestInProgress} />
             <Availability text={myStateValues.availabilityText} textColorString={myStateValues.availabilityTextColorString} isHidden={myStateValues.discalimerAndAvailabilityHidden} />

@@ -6,10 +6,10 @@ export interface IVerticalImageTitleDesc {
 
 export const VerticalImageTitleComp = (props: IVerticalImageTitleDesc) => {
     return (
-        <div className="flex flex-col w-[20%] items-center">
+        <div className="flex flex-col w-[70%] tablet:w-[20%] items-center">
             {props.icon}
             <p className="mt-2 font-bold text-xl text-center">{props.title}</p>
-            {props.description ? <p className="mt-2 px-8 text-lg text-center leading-5">{props.description}</p> : null}
+            {props.description ? <p className="mt-2 tablet:px-8 text-lg text-center leading-5">{props.description}</p> : null}
         </div>
     );
 };

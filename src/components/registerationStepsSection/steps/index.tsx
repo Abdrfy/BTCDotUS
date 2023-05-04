@@ -23,11 +23,10 @@ export const RegisterationSteps = () => {
     ];
 
     return (
-        <div className="mt-12 flex-row inline-flex justify-center space-x-10">
+        <div className="mt-10 flex flex-col tablet:flex-row tablet:justify-center max-[640px]:items-center max-[640px]:space-y-10 tablet:space-x-10">
             {registerationSteps.map((aRegisterationValue) => (
                 <VerticalImageTitleComp key={aRegisterationValue.title} icon={aRegisterationValue.icon} title={aRegisterationValue.title} description={aRegisterationValue.description} />
             ))}
-            ;
         </div>
     );
 };

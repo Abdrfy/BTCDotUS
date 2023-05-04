@@ -26,15 +26,15 @@ export const OptionsBar = () => {
     return (
         <div className="mt-10 bg-black">
             <div className="flex flex-row place-content-center justify-center items-center">
-                <div className="hover:scale-125 cursor-pointer" onClick={scrollLeft}>
+                <div className="hidden tablet:block hover:scale-125 cursor-pointer" onClick={scrollLeft}>
                     <SvgScrollLeftIcon />
                 </div>
-                <div id={faq_options_container_id} className="overflow-x-auto w-[60%] mx-2 py-4 scroll-smooth bg-black whitespace-nowrap">
+                <div id={faq_options_container_id} className="overflow-x-auto w-[90%] tablet:w-[60%] mx-2 py-4 scroll-smooth bg-black whitespace-nowrap">
                     {Object.values(FAQOptions).map((faqOption) => (
                         <FAQOptionButton key={faqOption} title={faqOption} />
                     ))}
                 </div>
-                <div className="hover:scale-125 rotate-180 cursor-pointer" onClick={scrollRight}>
+                <div className="hidden tablet:block hover:scale-125 rotate-180 cursor-pointer" onClick={scrollRight}>
                     <SvgScrollLeftIcon />
                 </div>
             </div>

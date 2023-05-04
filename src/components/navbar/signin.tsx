@@ -7,7 +7,7 @@ export const SignIn = () => {
     };
 
     return (
-        <button className="px-8 bg-indigo-600 font-bold text-white rounded-full hover:bg-indigo-400 h-[60%] mr-5" onClick={buttonHandler}>
+        <button className="px-6 lg:px-8 bg-indigo-600 font-bold text-white rounded-full hover:bg-indigo-400 h-[60%] mr-5" onClick={buttonHandler}>
             Sign In
         </button>
     );

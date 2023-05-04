@@ -5,7 +5,7 @@ import { Redirectors } from './redirectors';
 const NavBar = () => {
     return (
         <>
-            <nav className="fixed h-20 min-w-full bg-black flex flex-row justify-between items-center z-10">
+            <nav className="fixed h-16 tablet:h-20 w-full bg-black flex flex-row justify-between items-center z-10">
                 <Home />
                 <Redirectors />
                 <SignIn />
