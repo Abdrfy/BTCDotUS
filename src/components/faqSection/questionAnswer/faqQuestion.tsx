@@ -26,14 +26,14 @@ export const FAQQuestion = (props: IQuestion) => {
 
     return (
         <div id={props.id.toString()} className="flex flex-row w-full mb-7 cursor-pointer items-center justify-between" onClick={buttonHandler}>
-            <button className={classNameStr + ' font-bold text-xl text-left'}>{props.title}</button>
+            <button className={classNameStr + ' font-bold text-sm tabletPlus:text-xl text-left'}>{props.title}</button>
             {isClosed ? (
-                <div className="hover:scale-110">
+                <div className="pl-2 hover:scale-110">
                     {' '}
                     <SvgPlus />{' '}
                 </div>
             ) : (
-                <div className="hover:scale-110">
+                <div className="pl-2 hover:scale-110">
                     {' '}
                     <SvgMinus />{' '}
                 </div>
