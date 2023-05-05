@@ -4,7 +4,7 @@ import { useHamBurgerMenuContext } from '../../../context/hamBurgerMenu/context'
 export const HamBurgerButton = () => {
     const { isOpen, setIsOpen } = useHamBurgerMenuContext();
 
-    const divClickedHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    const divClickedHandler = () => {
         setIsOpen(!isOpen);
     };
 
