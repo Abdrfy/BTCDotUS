@@ -4,7 +4,7 @@ import { FooterSecondRow } from './nonMobileFooter/secondRow';
 
 export const Footer = () => {
     return (
-        <footer className="mt-2 bg-black flex flex-col tablet:px-20 py-4 tablet:py-10 space-y-4">
+        <footer className="mt-2 bg-black flex flex-col tablet:px-8 tabletPlus:px-20 py-4 tablet:py-10 space-y-4 text-xs tabletPlus:text-base">
             <div className="hidden tablet:block">
                 <FooterFirstRow />
                 <FooterSecondRow />
