@@ -11,7 +11,7 @@ import { HamBurgerMenuContext } from './context/hamBurgerMenu/context';
 
 function App() {
     return (
-        <div id="app" className="bg-main bg-cover bg-center h-full w-full">
+        <div id="app" className="bg-main bg-cover bg-center h-full w-full font-serif">
             <HamBurgerMenuContext>
                 <NavBar />
             </HamBurgerMenuContext>
