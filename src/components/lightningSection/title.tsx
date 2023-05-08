@@ -1,5 +1,5 @@
 export const LightningTitle = () => {
-    const commonProps = 'font-extrabold text-4xl tablet:text-6xl  ';
+    const commonProps = 'font-extrabold text-4xl tabletPlus:text-6xl tablet:text-[39px] ';
     return (
         <div className="mt-16 flex flex-col tablet:flex-row items-center">
             <div className="flex flex-row">
