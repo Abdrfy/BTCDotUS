@@ -33,7 +33,7 @@ export const FAQOptionButton = (props: IFAQOption) => {
     };
 
     return (
-        <button id={props.title} className={colorProps + ' rounded-xl mx-2 py-4 w-[25%]'} onClick={buttonHandler}>
+        <button id={props.title} className={colorProps + ' rounded-md tablet:rounded-xl mx-1 tablet:mx-2 py-2 tablet:py-4 w-[40%] tablet:w-[25%] text-[12px] tablet:text-base'} onClick={buttonHandler}>
             {props.title}
         </button>
     );
